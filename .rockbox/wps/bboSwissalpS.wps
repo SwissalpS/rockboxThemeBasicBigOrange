@@ -1,0 +1,69 @@
+# Basic Big Orange SwissalpS
+# (C) 2025 SwissalpS
+# Icons from "cabbie2" (C) Yohann Misquitta (C) 2007-2012 The Authors (see /rockbox/wps/AUTHORS)
+# Backdrop (C) 2025 SwissalpS CC-BY-SA 3.0
+#
+# Disable status bar
+%wd
+#
+# Load fonts
+%Fl(2,21-Adobe-Helvetica.fnt,100)
+%Fl(3,18-Adobe-Helvetica.fnt,100)
+%Fl(4,12-Adobe-Helvetica.fnt,100)
+#
+# Load backdrop
+%X(wpsbackdrop-176x132x16.bmp)
+#
+# Preload images
+%xl(B,battery-176x132x16.bmp,0,0,10)
+%xl(C,volume-176x132x16.bmp,0,0,10)
+%xl(D,shuffle-176x132x16.bmp,0,0)
+%xl(E,repeat-176x132x16.bmp,0,0,4)
+#
+# Progress bar
+%V(8,86,160,8,-)
+%pb(0,0,160,8,pb-176x132x16.bmp)
+#
+# Shuffle icon
+%V(1,119,15,8,-)
+%?ps<%xd(D)>
+#
+# Repeat icon
+%V(61,115,11,15,-)
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ec)|%xd(Ed)>
+#
+# Time of day
+%V(17,114,39,18,3)
+%ar%cH:%cM
+#
+# Estimated battery time left
+%V(110,114,66,18,3)
+%ar%bt
+#
+# Volume icon
+%V(77,118,13,9,-)
+%?pv<%xd(Ca)|%xd(Cb)|%xd(Cc)|%xd(Cd)|%xd(Ce)|%xd(Cf)|%xd(Cg)|%xd(Ch)|%xd(Ci)|%xd(Cj)>
+#
+# Battery icon
+%V(93,118,16,9,-)
+%?bp<%?bc<%xd(Ba)|%xd(Bb)>|%?bl<|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)>>
+#
+# Time elapsed/remaining
+%V(2,95,173,21,2)
+%al%pc%ac%?Sr<%pe/%pp|%pp/%pe>%ar%pr
+#
+# Track info
+%V(0,2,-,21,2)
+# Track title or filename
+%s%ac%?it<%it|%fn>
+# Artist or album artist or upper level directory
+%V(0,24,-,21,3)
+%s%ac%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|/>>>
+#
+%V(0,45,-,12,4)
+%ac%Sx(Next Track:)
+#
+# Track title or filename
+%V(0,61,-,21,2)
+%s%ac%?It<%It|%Fn>
+
